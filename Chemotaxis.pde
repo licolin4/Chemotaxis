@@ -1,17 +1,21 @@
  //declare bacteria variables here  
-Bacteria one;
+Bacteria[] colony;
  void setup()   
  {     
  	//initialize bacteria variables here
  	size(500,500); 
- 	one = new Bacteria();
+ 	colony = new Bacteria[100];
  }   
  void draw()   
  {    
  	//move and show the bacteria
  	background(0);
- 	one.move();
- 	one.show();
+ 	for (int i = 0; i < colony.length; i++)
+ 	{
+ 		colony[i] = new Bacteria();
+ 		colony[i].move();
+ 		colony[i].show();
+ 	}
  }  
  class Bacteria    
  {     
@@ -34,5 +38,7 @@ Bacteria one;
  	{
  		fill(myColor,myColor1,myColor2);
  		ellipse(myX,myY,10,10);
+ 		fill(myColor,myColor1,myColor2);
+ 		ellipse(myX,myY,5,5);
  	}
  }    
